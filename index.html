@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Productos</title>
+    <link tyoe="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="productoCodigo">Codigo de Producto</label>
+                        <input type="text" name="productoCodigo" id="productoCodigo">
+                    </div>
+                    <div>
+                        <label for="productoNombre">Nombre de Producto</label>
+                        <input type="text" name="productoNombre" id="productoNombre">
+                    </div>
+                    <div>
+                        <label for="productoCantidad">Cantidad de Producto</label>
+                        <input type="number" name="productoCantidad" id="productoCantidad">
+                    </div>
+                    <div>
+                        <label for="productoPrecio">Precio de Producto</label>
+                        <input type="number" name="productoPrecio" id="productoPrecio">
+                    </div>
+                    <div>
+                        <label for="productoStock">Stock de Producto</label>
+                        <input type="number" name="productoStock" id="productoStock">
+                    </div>
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="storeList">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
