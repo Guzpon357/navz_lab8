@@ -15,11 +15,10 @@ function onFormSubmit(e) {
 //Retrieve the data
 function readFormData() {
     var formData = {};
-    formData["productoCodigo"] = document.getElementById("productoCodigo").value;
-    formData["productoNombre"] = document.getElementById("productoNombre").value;
-    formData["productoCantidad"] = document.getElementById("productoCantidad").value;
-    formData["productoPrecio"] = document.getElementById("productoPrecio").value;
-    formData["productoStock"] = document.getElementById("productoStock").value;
+    formData["Codigo"] = document.getElementById("Codigo").value;
+    formData["Nombre"] = document.getElementById("Nombre").value;
+    formData["Precio"] = document.getElementById("Precio").value;
+    formData["Stock"] = document.getElementById("Stock").value;
     return formData;
 }
 
@@ -28,34 +27,30 @@ function insertNewRecord(data) {
     var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
     cell1 = newRow.insertCell(0);
-		cell1.innerHTML = data.productoCodigo;
+		cell1.innerHTML = data.Codigo;
     cell2 = newRow.insertCell(1);
-		cell2.innerHTML = data.productoNombre;
+		cell2.innerHTML = data.Nombre;
     cell3 = newRow.insertCell(2);
-		cell3.innerHTML = data.productoCantidad;
+		cell3.innerHTML = data.Precio;
     cell4 = newRow.insertCell(3);
-		cell4.innerHTML = data.productoPrecio;
+		cell4.innerHTML = data.stock;
     cell5 = newRow.insertCell(4);
-		cell5.innerHTML = data.productoStock;
-    cell6 = newRow.insertCell(5);
-        cell6.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
+    cell5.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
 }
 
 //Edit the data
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
-    document.getElementById("productoCodigo").value = selectedRow.cells[0].innerHTML;
-    document.getElementById("productoNombre").value = selectedRow.cells[1].innerHTML;
-    document.getElementById("productoCantidad").value = selectedRow.cells[2].innerHTML;
-    document.getElementById("productoPrecio").value = selectedRow.cells[3].innerHTML;
-    document.getElementById("productoStock").value = selectedRow.cells[4].innerHTML;
+    document.getElementById("Codigo").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("Nombre").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("Precio").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("Stock").value = selectedRow.cells[3].innerHTML;
 }
 function updateRecord(formData) {
-    selectedRow.cells[0].innerHTML = formData.productoCodigo;
-    selectedRow.cells[1].innerHTML = formData.productoNombre;
-    selectedRow.cells[2].innerHTML = formData.productoCantidad;
-    selectedRow.cells[3].innerHTML = formData.productoPrecio;
-    selectedRow.cells[4].innerHTML = formData.productoStock;
+    selectedRow.cells[0].innerHTML = formData.Codigo;
+    selectedRow.cells[1].innerHTML = formData.Nombre;
+    selectedRow.cells[2].innerHTML = formData.Precio;
+    selectedRow.cells[3].innerHTML = formData.Stock;
 }
 
 //Delete the data
@@ -69,10 +64,9 @@ function onDelete(td) {
 
 //Reset the data
 function resetForm() {
-    document.getElementById("productoCodigo").value = '';
-    document.getElementById("productoNombre").value = '';
-    document.getElementById("productoCantidad").value = '';
-    document.getElementById("productoPrecio").value = '';
-    document.getElementById("productoStock").value = '';
+    document.getElementById("Codigo").value = '';
+    document.getElementById("Nombre").value = '';
+    document.getElementById("Precio").value = '';
+    document.getElementById("Stock").value = '';
     selectedRow = null;
 }
